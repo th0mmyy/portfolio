@@ -1,697 +1,13 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thomas Manzoni - Developer Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
-            background: #0a0a0f;
-            color: #fff;
-            overflow-x: hidden;
-            cursor: none;
-        }
-
-        #cursor {
-            width: 12px;
-            height: 12px;
-            border: 2px solid #6366f1;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
-            mix-blend-mode: screen;
-        }
-
-        #cursor.hover {
-            width: 40px;
-            height: 40px;
-            background: rgba(99, 102, 241, 0.15);
-            border-color: #a78bfa;
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gradient-orb {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.5;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .orb-1 {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            top: -200px;
-            left: -200px;
-        }
-
-        .orb-2 {
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
-            bottom: -200px;
-            right: -200px;
-            animation-delay: -10s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(50px, -50px) scale(1.1); }
-            66% { transform: translate(-30px, 30px) scale(0.9); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 2rem;
-            max-width: 900px;
-        }
-
-        .hero-label {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            animation: fadeIn 0.8s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h1 {
-            font-size: clamp(3rem, 10vw, 7rem);
-            font-weight: 900;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #fff 0%, #a78bfa 50%, #6366f1 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 4s ease infinite, fadeIn 1s ease 0.2s both;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            opacity: 0.7;
-            margin-bottom: 3rem;
-            animation: fadeIn 1s ease 0.4s both;
-            line-height: 1.6;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeIn 1s ease 0.6s both;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #fff;
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(99, 102, 241, 0.5);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            opacity: 0.5;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-15px); }
-        }
-
-        section {
-            padding: 6rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-label {
-            display: inline-block;
-            padding: 0.4rem 1.2rem;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .section-desc {
-            font-size: 1.2rem;
-            opacity: 0.7;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        @media (max-width: 968px) {
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .profile-section {
-                position: relative !important;
-                top: 0 !important;
-            }
-        }
-
-        .profile-section {
-            position: sticky;
-            top: 2rem;
-        }
-
-        .profile-image-container {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            margin: 0 auto 2rem;
-        }
-
-        .profile-image-bg {
-            position: absolute;
-            inset: -20px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
-            border-radius: 50%;
-            animation: rotate 8s linear infinite;
-            opacity: 0.7;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .profile-image {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid #0a0a0f;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-        }
-
-        .profile-info {
-            text-align: center;
-        }
-
-        .profile-name {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .profile-role {
-            color: #a78bfa;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .profile-location {
-            opacity: 0.7;
-            font-size: 0.95rem;
-        }
-
-        .about-text-content {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.85;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .highlight {
-            color: #a78bfa;
-            font-weight: 600;
-        }
-
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .interest-tag {
-            padding: 0.6rem 1.5rem;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 50px;
-            font-size: 0.95rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-card {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(99, 102, 241, 0.5);
-            background: rgba(99, 102, 241, 0.05);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #6366f1, #a78bfa);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            opacity: 0.7;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .project-card {
-            position: relative;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            cursor: pointer;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(99, 102, 241, 0.5);
-            box-shadow: 0 30px 60px rgba(99, 102, 241, 0.2);
-        }
-
-        .project-image {
-            height: 250px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card:nth-child(2) .project-image {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-
-        .project-card:nth-child(3) .project-image {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-
-        .project-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 4rem;
-            opacity: 0.3;
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .tag {
-            padding: 0.3rem 0.8rem;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 20px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .project-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-        }
-
-        .project-desc {
-            opacity: 0.8;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            padding: 0.6rem 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .project-link:hover {
-            background: rgba(99, 102, 241, 0.2);
-            border-color: rgba(99, 102, 241, 0.5);
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .skill-category-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #a78bfa;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .skill-item {
-            padding: 0.6rem 1.2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50px;
-            font-size: 0.95rem;
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, #6366f1, #8b5cf6);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            padding-left: 2rem;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -3rem;
-            top: 0.5rem;
-            width: 16px;
-            height: 16px;
-            background: #6366f1;
-            border: 3px solid #0a0a0f;
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
-        }
-
-        .timeline-content {
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            background: rgba(99, 102, 241, 0.05);
-            border-color: rgba(99, 102, 241, 0.3);
-        }
-
-        .timeline-date {
-            color: #a78bfa;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-subtitle {
-            opacity: 0.7;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-desc {
-            opacity: 0.8;
-            line-height: 1.6;
-        }
-
-        .timeline-desc ul {
-            margin-top: 0.8rem;
-            padding-left: 1.5rem;
-        }
-
-        .timeline-desc li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-            border-radius: 40px;
-            margin: 4rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.1), transparent);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.8;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 2rem;
-            opacity: 0.6;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-cta {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .timeline {
-                padding-left: 2rem;
-            }
-
-            .timeline-item {
-                padding-left: 1.5rem;
-            }
-
-            .timeline-dot {
-                left: -2.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div id="cursor"></div>
 
@@ -699,7 +15,7 @@
     <section class="hero">
         <div class="gradient-orb orb-1"></div>
         <div class="gradient-orb orb-2"></div>
-        
+
         <div class="hero-content">
             <div class="hero-label">🎓 Studente ITIS G. Marconi • Quinto Anno</div>
             <h1>Thomas Manzoni</h1>
@@ -719,10 +35,10 @@
                 </a>
             </div>
         </div>
-        
+
         <div class="scroll-indicator">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 5v14M19 12l-7 7-7-7"/>
+                <path d="M12 5v14M19 12l-7 7-7-7" />
             </svg>
         </div>
     </section>
@@ -739,7 +55,7 @@
                 <div class="profile-image-container">
                     <div class="profile-image-bg"></div>
                     <div class="profile-image">
-                        <img src="img.png" alt="Thomas Manzoni">
+                        <img src="img/pfp.png" alt="Thomas Manzoni">
                     </div>
                 </div>
                 <div class="profile-info">
@@ -752,22 +68,25 @@
             <div class="about-text-content">
                 <div class="about-text">
                     <p>
-                        Sono uno <span class="highlight">studente del quinto anno</span> all'ITIS Guglielmo Marconi di Dalmine, 
-                        indirizzo Informatica e Telecomunicazioni. La mia passione per la tecnologia mi ha portato a 
-                        sviluppare competenze pratiche attraverso <span class="highlight">progetti personali</span> e 
+                        Sono uno <span class="highlight">studente del quinto anno</span> all'ITIS Guglielmo Marconi di
+                        Dalmine,
+                        indirizzo Informatica e Telecomunicazioni. La mia passione per la tecnologia mi ha portato a
+                        sviluppare competenze pratiche attraverso <span class="highlight">progetti personali</span> e
                         <span class="highlight">esperienze in azienda</span>.
                     </p>
                     <p>
-                        Ho avuto l'opportunità di lavorare con <span class="highlight">ABB</span> nell'ufficio ingegneria, 
-                        dove ho sviluppato script Python per automatizzare processi, e ho vissuto un'esperienza 
-                        internazionale a <span class="highlight">Barcellona</span> collaborando con una startup tecnologica.
+                        Ho avuto l'opportunità di lavorare con <span class="highlight">ABB</span> nell'ufficio
+                        ingegneria,
+                        dove ho sviluppato script Python per automatizzare processi, e ho vissuto un'esperienza
+                        internazionale a <span class="highlight">Barcellona</span> collaborando con una startup
+                        tecnologica.
                     </p>
                     <p>
-                        Il mio obiettivo è <span class="highlight">proseguire con l'università</span> affiancandola 
-                        a un'esperienza lavorativa che mi permetta di crescere professionalmente e mettere in pratica 
+                        Il mio obiettivo è <span class="highlight">proseguire con l'università</span> affiancandola
+                        a un'esperienza lavorativa che mi permetta di crescere professionalmente e mettere in pratica
                         le competenze acquisite.
                     </p>
-                    
+
                     <div class="interests">
                         <div class="interest-tag">⚽ Calcio</div>
                         <div class="interest-tag">🏋️ Fitness</div>
@@ -790,10 +109,11 @@
                         <div class="stat-number">2</div>
                         <div class="stat-label">Esperienze PCTO</div>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card no-counter">
                         <div class="stat-number">B2</div>
                         <div class="stat-label">Inglese (FCE)</div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -822,8 +142,8 @@
                     </div>
                     <h3 class="project-title">Othello Game</h3>
                     <p class="project-desc">
-                        Replica completa del gioco da tavolo Othello con implementazione della logica di gioco, 
-                        gestione delle regole e strutture dati avanzate. Progetto che dimostra competenze in 
+                        Replica completa del gioco da tavolo Othello con implementazione della logica di gioco,
+                        gestione delle regole e strutture dati avanzate. Progetto che dimostra competenze in
                         programmazione a oggetti e algoritmi.
                     </p>
                     <div class="project-links">
@@ -847,8 +167,8 @@
                     </div>
                     <h3 class="project-title">App Codice Fiscale</h3>
                     <p class="project-desc">
-                        Applicazione mobile cross-platform per il calcolo del codice fiscale italiano. 
-                        Integra salvataggio dati tramite API REST e formato JSON. Interfaccia moderna 
+                        Applicazione mobile cross-platform per il calcolo del codice fiscale italiano.
+                        Integra salvataggio dati tramite API REST e formato JSON. Interfaccia moderna
                         e user-friendly.
                     </p>
                     <div class="project-links">
@@ -872,8 +192,8 @@
                     </div>
                     <h3 class="project-title">Siti Web Dinamici</h3>
                     <p class="project-desc">
-                        Sviluppo di siti web dinamici completi con HTML, CSS, PHP e database MySQL. 
-                        Implementazione di sistemi CRUD, autenticazione utenti e gestione contenuti 
+                        Sviluppo di siti web dinamici completi con HTML, CSS, PHP e database MySQL.
+                        Implementazione di sistemi CRUD, autenticazione utenti e gestione contenuti
                         dinamici dal database.
                     </p>
                     <div class="project-links">
@@ -969,7 +289,7 @@
                     <h3 class="timeline-title">Certificazione Siemens PLC</h3>
                     <p class="timeline-subtitle">Fondazione Dalmine</p>
                     <div class="timeline-desc">
-                        Completato corso di automazione base con PLC Siemens, acquisendo competenze 
+                        Completato corso di automazione base con PLC Siemens, acquisendo competenze
                         in programmazione industriale e controllo processi.
                     </div>
                 </div>
@@ -1045,7 +365,7 @@
                     <h3 class="timeline-title">ITIS Guglielmo Marconi</h3>
                     <p class="timeline-subtitle">Indirizzo: Informatica e Telecomunicazioni</p>
                     <div class="timeline-desc">
-                        Attualmente al quinto anno, con focus su programmazione, database, 
+                        Attualmente al quinto anno, con focus su programmazione, database,
                         reti e sviluppo software.
                     </div>
                 </div>
@@ -1058,7 +378,7 @@
         <div class="cta-content">
             <h2 class="cta-title">Lavoriamo Insieme</h2>
             <p class="cta-subtitle">
-                Sono alla ricerca di opportunità di stage o lavoro part-time per crescere 
+                Sono alla ricerca di opportunità di stage o lavoro part-time per crescere
                 professionalmente mentre studio all'università. Hai un progetto in mente?
             </p>
             <div class="cta-buttons">
@@ -1080,106 +400,11 @@
 
     <footer>
         <p>© 2025 Thomas Manzoni - Made with 💜 and code</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">ITIS G. Marconi • Dalmine (BG) • Informatica e Telecomunicazioni</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">ITIS G. Marconi • Dalmine (BG) • Informatica e
+            Telecomunicazioni</p>
     </footer>
 
-    <script>
-        // Custom cursor
-        const cursor = document.getElementById('cursor');
-        let mouseX = 0, mouseY = 0;
-        let cursorX = 0, cursorY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursor.style.left = mouseX + 'px';
-            cursor.style.top = mouseY + 'px';
-        });
-
-        // Hover effects
-        const hoverElements = document.querySelectorAll('a, button, .project-card, .stat-card, .skill-category, .timeline-content');
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Animate sections on scroll
-        document.querySelectorAll('section, .project-card, .stat-card, .timeline-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-
-        // Parallax effect on hero
-        document.addEventListener('mousemove', (e) => {
-            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-            
-            document.querySelectorAll('.gradient-orb').forEach((orb, index) => {
-                const depth = (index + 1) * 0.5;
-                orb.style.transform = `translate(${moveX * depth}px, ${moveY * depth}px)`;
-            });
-        });
-
-        // Counter animation for stats
-        const animateCounter = (element, target) => {
-            let current = 0;
-            const increment = target / 50;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target + (element.textContent.includes('+') ? '+' : '');
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : '');
-                }
-            }, 30);
-        };
-
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const number = entry.target.querySelector('.stat-number');
-                    const text = number.textContent;
-                    const value = parseInt(text.replace(/\D/g, ''));
-                    if (!isNaN(value)) {
-                        animateCounter(number, value);
-                    }
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        });
-
-        document.querySelectorAll('.stat-card').forEach(card => {
-            statsObserver.observe(card);
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
