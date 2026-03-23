@@ -1,408 +1,349 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thomas Manzoni - Developer Portfolio</title>
+    <title>Thomas Manzoni — Developer</title>
+    <meta name="description"
+        content="Portfolio di Thomas Manzoni, studente ITIS Marconi Dalmine. PHP, Python, C#, automazione.">
+    <meta property="og:title" content="Thomas Manzoni — Developer">
+    <meta property="og:description" content="Studente ITIS Marconi · PHP · Python · Automazione ABB · PCTO Barcellona">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div id="cursor"></div>
 
-    <!-- Hero Section -->
+    <!-- Theme toggle -->
+    <button id="theme-toggle" aria-label="Cambia tema">
+        <span class="icon-dark">🌙</span>
+        <span class="icon-light">☀️</span>
+    </button>
+
+    <!-- HERO -->
     <section class="hero">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-
-        <div class="hero-content">
-            <div class="hero-label">🎓 Studente ITIS G. Marconi • Quinto Anno</div>
-            <h1>Thomas Manzoni</h1>
-            <p class="hero-subtitle">
-                Developer con passione per l'automazione e lo sviluppo software.<br>
-                Pronto a trasformare idee in codice funzionale.
-            </p>
-            <div class="hero-cta">
-                <a href="#progetti" class="btn btn-primary">
-                    <span>Vedi i Progetti</span>
-                    <span>→</span>
-                </a>
-                <a href="#contatti" class="btn btn-secondary">Contattami</a>
-                <a href="mailto:thomas.manzoni@example.com" class="btn btn-secondary">
-                    <span>📄</span>
-                    <span>Scarica CV</span>
-                </a>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="hero-inner">
+            <span class="badge">🎓 ITIS G. Marconi · Quinta · Informatica</span>
+            <h1>Thomas<br>Manzoni</h1>
+            <p class="sub">Developer appassionato di automazione e web.<br>Da Dalmine al mondo.</p>
+            <div class="cta-row">
+                <a href="#progetti" class="btn primary">Progetti ↓</a>
+                <a href="uploads/CV.pdf" target="_blank" rel="noopener" class="btn ghost">CV PDF</a>
             </div>
         </div>
-
-        <div class="scroll-indicator">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <a href="#about" class="scroll-arrow" aria-label="Scorri">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 5v14M19 12l-7 7-7-7" />
             </svg>
-        </div>
+        </a>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="section-header">
-            <div class="section-label">Chi Sono</div>
-            <h2 class="section-title">La Mia Storia</h2>
-        </div>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <div class="label">Chi sono</div>
+        <h2>La mia storia</h2>
 
-        <div class="about-content">
-            <div class="profile-section">
-                <div class="profile-image-container">
-                    <div class="profile-image-bg"></div>
-                    <div class="profile-image">
-                        <img src="img/pfp.png" alt="Thomas Manzoni">
+        <div class="about-layout">
+            <div class="profile">
+                <div class="avatar-wrap">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar">
+                        <img src="img/pfp.png" alt="Thomas Manzoni" loading="lazy">
                     </div>
                 </div>
-                <div class="profile-info">
-                    <h3 class="profile-name">Thomas Manzoni</h3>
-                    <p class="profile-role">Developer & Student</p>
-                    <p class="profile-location">📍 Dalmine (BG), Italia</p>
+                <strong>Thomas Manzoni</strong>
+                <span class="role">Developer & Student</span>
+                <span class="loc">📍 Dalmine (BG)</span>
+                <div class="socials">
+                    <a href="https://github.com/th0mmyy" target="_blank" rel="noopener" aria-label="GitHub personale"
+                        title="GitHub personale">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/manzonithomas" target="_blank" rel="noopener"
+                        aria-label="GitHub scolastico" title="GitHub scolastico">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a href="mailto:thomasmanzoni9807@gmail.com" aria-label="Email">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                    </a>
                 </div>
-            </div>
-
-            <div class="about-text-content">
-                <div class="about-text">
-                    <p>
-                        Sono uno <span class="highlight">studente del quinto anno</span> all'ITIS Guglielmo Marconi di
-                        Dalmine,
-                        indirizzo Informatica e Telecomunicazioni. La mia passione per la tecnologia mi ha portato a
-                        sviluppare competenze pratiche attraverso <span class="highlight">progetti personali</span> e
-                        <span class="highlight">esperienze in azienda</span>.
-                    </p>
-                    <p>
-                        Ho avuto l'opportunità di lavorare con <span class="highlight">ABB</span> nell'ufficio
-                        ingegneria,
-                        dove ho sviluppato script Python per automatizzare processi, e ho vissuto un'esperienza
-                        internazionale a <span class="highlight">Barcellona</span> collaborando con una startup
-                        tecnologica.
-                    </p>
-                    <p>
-                        Il mio obiettivo è <span class="highlight">proseguire con l'università</span> affiancandola
-                        a un'esperienza lavorativa che mi permetta di crescere professionalmente e mettere in pratica
-                        le competenze acquisite.
-                    </p>
-
-                    <div class="interests">
-                        <div class="interest-tag">⚽ Calcio</div>
-                        <div class="interest-tag">🏋️ Fitness</div>
-                        <div class="interest-tag">🏎️ Formula 1</div>
-                        <div class="interest-tag">💻 Coding</div>
-                        <div class="interest-tag">🤖 Automazione</div>
-                    </div>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">5°</div>
-                        <div class="stat-label">Anno ITIS</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3+</div>
-                        <div class="stat-label">Progetti Completati</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">2</div>
-                        <div class="stat-label">Esperienze PCTO</div>
-                    </div>
-                    <div class="stat-card no-counter">
-                        <div class="stat-number">B2</div>
-                        <div class="stat-label">Inglese (FCE)</div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="progetti">
-        <div class="section-header">
-            <div class="section-label">Portfolio</div>
-            <h2 class="section-title">Progetti in Evidenza</h2>
-            <p class="section-desc">
-                Una selezione dei miei progetti più significativi, sviluppati sia a scuola che per passione personale
-            </p>
-        </div>
-
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">
-                    <div class="project-icon">🎮</div>
-                </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="tag">C#</span>
-                        <span class="tag">Game Logic</span>
-                        <span class="tag">OOP</span>
-                    </div>
-                    <h3 class="project-title">Othello Game</h3>
-                    <p class="project-desc">
-                        Replica completa del gioco da tavolo Othello con implementazione della logica di gioco,
-                        gestione delle regole e strutture dati avanzate. Progetto che dimostra competenze in
-                        programmazione a oggetti e algoritmi.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/thomasmanzoni/othello" class="project-link">
-                            <span>GitHub</span>
-                            <span>→</span>
-                        </a>
-                    </div>
+                <!-- GitHub labels -->
+                <div class="gh-labels">
+                    <span><a href="https://github.com/th0mmyy" target="_blank" rel="noopener">th0mmyy</a> —
+                        personale</span>
+                    <span><a href="https://github.com/manzonithomas" target="_blank" rel="noopener">manzonithomas</a> —
+                        scolastico</span>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-image">
-                    <div class="project-icon">📱</div>
-                </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="tag">.NET MAUI</span>
-                        <span class="tag">Mobile</span>
-                        <span class="tag">API</span>
-                    </div>
-                    <h3 class="project-title">App Codice Fiscale</h3>
-                    <p class="project-desc">
-                        Applicazione mobile cross-platform per il calcolo del codice fiscale italiano.
-                        Integra salvataggio dati tramite API REST e formato JSON. Interfaccia moderna
-                        e user-friendly.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/thomasmanzoni/codice-fiscale-app" class="project-link">
-                            <span>GitHub</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <div class="about-text">
+                <p>Sono uno <strong>studente del quinto anno</strong> all'ITIS Guglielmo Marconi di Dalmine, indirizzo
+                    Informatica e Telecomunicazioni. La mia passione per la tecnologia mi ha portato a sviluppare
+                    competenze solide attraverso <strong>progetti reali</strong> e <strong>esperienze in
+                        azienda</strong>.</p>
+                <p>Ho lavorato con <strong>ABB</strong> nell'ufficio ingegneria sviluppando script Python per
+                    automatizzare processi, e ho vissuto un'esperienza internazionale a <strong>Barcellona</strong>
+                    collaborando con una startup tech su un'app Flutter.</p>
+                <p>Obiettivo: proseguire all'<strong>università</strong> affiancandola a un lavoro che mi permetta di
+                    crescere professionalmente.</p>
 
-            <div class="project-card">
-                <div class="project-image">
-                    <div class="project-icon">🌐</div>
+                <div class="tags">
+                    <span>⚽ Calcio</span>
+                    <span>🏋️ Fitness</span>
+                    <span>🏎️ Formula 1</span>
+                    <span>💻 Coding</span>
+                    <span>🤖 Automazione</span>
                 </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="tag">PHP</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">Full-Stack</span>
-                    </div>
-                    <h3 class="project-title">Siti Web Dinamici</h3>
-                    <p class="project-desc">
-                        Sviluppo di siti web dinamici completi con HTML, CSS, PHP e database MySQL.
-                        Implementazione di sistemi CRUD, autenticazione utenti e gestione contenuti
-                        dinamici dal database.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/thomasmanzoni/web-projects" class="project-link">
-                            <span>GitHub</span>
-                            <span>→</span>
-                        </a>
-                    </div>
+
+                <div class="stats">
+                    <div class="stat"><strong>5°</strong><span>Anno ITIS</span></div>
+                    <div class="stat"><strong>4+</strong><span>Progetti</span></div>
+                    <div class="stat"><strong>2</strong><span>PCTO</span></div>
+                    <div class="stat no-count"><strong>B2</strong><span>Inglese FCE</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="section-header">
-            <div class="section-label">Competenze</div>
-            <h2 class="section-title">Tech Stack</h2>
+    <!-- PROJECTS -->
+    <section id="progetti" class="section">
+        <div class="label">Portfolio</div>
+        <h2>Progetti</h2>
+        <p class="section-sub">Tre selezionati. Gli altri sono su GitHub.</p>
+
+        <div class="projects">
+            <div class="project">
+                <div class="proj-cover" style="--c1:#1a2e1a;--c2:#0f3320" data-cover="img/cover-menu.jpg">
+                    <span class="proj-emoji">🍽️</span>
+                </div>
+                <div class="proj-body">
+                    <div class="chips"><span>PHP</span><span>MySQL</span><span>Full-Stack</span></div>
+                    <h3>Menu Digitale</h3>
+                    <p>Sistema di gestione menu per ristorante con pannello admin, CRUD su categorie e piatti, e
+                        interfaccia pubblica ottimizzata per mobile.</p>
+                    <p>Cosa ho imparato: Generazione QR code PHP, gestione database MySQL, sviluppo interfacce utente
+                        responsive.</p>
+                    <div class="proj-links">
+                        <a href="https://menudigitale.page.gd/" target="_blank" rel="noopener"
+                            class="proj-link primary">Demo live ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COVER FOTO: img/cover-f1.jpg -->
+            <div class="project">
+                <div class="proj-cover" style="--c1:#1a0000;--c2:#3d0000" data-cover="img/cover-f1.jpg">
+                    <span class="proj-emoji">🏎️</span>
+                </div>
+                <div class="proj-body">
+                    <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>API</span></div>
+                    <h3>F1 — OpenF1</h3>
+                    <p>Dashboard dati Formula 1 in tempo reale tramite API OpenF1. Tempi sul giro, telemetria e
+                        classifiche aggiornate live durante le sessioni.</p>
+                    <p>Cosa ho imparato: Integrazione API REST, gestione dati in tempo reale, sviluppo interfacce utente
+                        responsive.</p>
+                    <div class="proj-links">
+                        <a href="https://apif1tps.vercel.app/" target="_blank" rel="noopener"
+                            class="proj-link primary">Demo live ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COVER FOTO: img/cover-quiz.jpg -->
+            <div class="project">
+                <div class="proj-cover" style="--c1:#0d1f3c;--c2:#1a3a6e" data-cover="img/cover-quiz.jpg">
+                    <span class="proj-emoji">📱</span>
+                </div>
+                <div class="proj-body">
+                    <div class="chips"><span>.NET MAUI</span><span>Mobile</span><span>API</span></div>
+                    <h3>App Quiz Patente</h3>
+                    <p>App mobile cross-platform per la preparazione all'esame di teoria. Domande da API REST,
+                        salvataggio progresso locale e statistiche per sessione.</p>
+                    <p>Cosa ho imparato: Sviluppo applicazioni mobile cross-platform, integrazione con API REST,
+                        gestione dati locali.</p>
+                    <div class="proj-links">
+                        <a href="https://github.com/manzonithomas/Manzoni_Sesana-ProgettoQuizPatente" target="_blank"
+                            rel="noopener" class="proj-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <div class="more-row">
+            <p>Altri: Bookshelf App, Calibration Manager (ABB), Othello (C#)…</p>
+            <p>Pagina "Progetti" presto in arrivo...</p>
+            <div class="more-btns">
+                <a href="https://github.com/th0mmyy" target="_blank" rel="noopener" class="btn ghost">th0mmyy →</a>
+                <a href="https://github.com/manzonithomas" target="_blank" rel="noopener"
+                    class="btn ghost">manzonithomas →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <div class="label">Competenze</div>
+        <h2>Tech Stack</h2>
 
         <div class="skills-grid">
-            <div class="skill-category">
-                <h3 class="skill-category-title">💻 Programmazione</h3>
-                <div class="skill-list">
-                    <span class="skill-item">Python</span>
-                    <span class="skill-item">C#</span>
-                    <span class="skill-item">JavaScript</span>
-                    <span class="skill-item">VBA</span>
+            <div class="skill-cat">
+                <h3>💻 Linguaggi</h3>
+                <div class="skill-rows">
+                    <div class="skill-row"><span>Python</span><span class="lv adv">Avanzato</span></div>
+                    <div class="skill-row"><span>PHP</span><span class="lv adv">Avanzato</span></div>
+                    <div class="skill-row"><span>C#</span><span class="lv mid">Intermedio</span></div>
+                    <div class="skill-row"><span>JavaScript</span><span class="lv base">Base</span></div>
+                    <div class="skill-row"><span>VBA</span><span class="lv base">Base</span></div>
                 </div>
             </div>
-
-            <div class="skill-category">
-                <h3 class="skill-category-title">🌐 Web Development</h3>
-                <div class="skill-list">
-                    <span class="skill-item">HTML/CSS</span>
-                    <span class="skill-item">PHP</span>
-                    <span class="skill-item">MySQL</span>
+            <div class="skill-cat">
+                <h3>🌐 Web</h3>
+                <div class="skill-rows">
+                    <div class="skill-row"><span>HTML / CSS</span><span class="lv adv">Avanzato</span></div>
+                    <div class="skill-row"><span>PHP + MySQL</span><span class="lv adv">Avanzato</span></div>
+                    <div class="skill-row"><span>REST API</span><span class="lv mid">Intermedio</span></div>
+                    <div class="skill-row"><span>CRUD / Auth</span><span class="lv mid">Intermedio</span></div>
                 </div>
             </div>
-
-            <div class="skill-category">
-                <h3 class="skill-category-title">📱 Mobile & Desktop</h3>
-                <div class="skill-list">
-                    <span class="skill-item">.NET MAUI</span>
-                    <span class="skill-item">Windows Forms</span>
-                    <span class="skill-item">Flutter (base)</span>
+            <div class="skill-cat">
+                <h3>📱 Mobile</h3>
+                <div class="skill-rows">
+                    <div class="skill-row"><span>.NET MAUI</span><span class="lv mid">Intermedio</span></div>
+                    <div class="skill-row"><span>Flutter</span><span class="lv base">Base</span></div>
+                    <div class="skill-row"><span>Windows Forms</span><span class="lv mid">Intermedio</span></div>
                 </div>
             </div>
-
-            <div class="skill-category">
-                <h3 class="skill-category-title">🛠️ Tools & Altro</h3>
-                <div class="skill-list">
-                    <span class="skill-item">Git/GitHub</span>
-                    <span class="skill-item">Excel Avanzato</span>
-                    <span class="skill-item">Figma</span>
-                    <span class="skill-item">Office Suite</span>
+            <div class="skill-cat">
+                <h3>🛠️ Tools</h3>
+                <div class="skill-rows">
+                    <div class="skill-row"><span>Git / GitHub</span><span class="lv mid">Intermedio</span></div>
+                    <div class="skill-row"><span>Figma</span><span class="lv base">Base</span></div>
+                    <div class="skill-row"><span>Excel avanzato</span><span class="lv adv">Avanzato</span></div>
+                    <div class="skill-row"><span>XAMPP</span><span class="lv mid">Intermedio</span></div>
+                    <div class="skill-row"><span>Chatbot</span><span class="lv mid">Intermedio</span></div>
+                    <div class="skill-row"><span>IA</span><span class="lv mid">Intermedio</span></div>
                 </div>
             </div>
+        </div>
 
-            <div class="skill-category">
-                <h3 class="skill-category-title">🎯 Soft Skills</h3>
-                <div class="skill-list">
-                    <span class="skill-item">Problem Solving</span>
-                    <span class="skill-item">Lavoro in Team</span>
-                    <span class="skill-item">Autonomia</span>
-                    <span class="skill-item">Apprendimento Rapido</span>
+        <div class="certs">
+            <h3>🏅 Certificazioni</h3>
+            <div class="cert-list">
+                <div class="cert"><span>🤖</span>
+                    <div><strong>ABB Automazione Industriale</strong><small>Fondazione Dalmine · Giugno 2025</small>
+                    </div><span class="chk">✓</span>
                 </div>
-            </div>
-
-            <div class="skill-category">
-                <h3 class="skill-category-title">🤖 Certificazioni</h3>
-                <div class="skill-list">
-                    <span class="skill-item">ABB Automazione</span>
-                    <span class="skill-item">Festo FACT</span>
-                    <span class="skill-item">Siemens PLC</span>
+                <div class="cert"><span>⚙️</span>
+                    <div><strong>Siemens PLC — TIA Portal</strong><small>Fondazione Dalmine · Dicembre 2025</small>
+                    </div><span class="chk">✓</span>
+                </div>
+                <div class="cert"><span>💨</span>
+                    <div><strong>Festo FACT — Pneumatica</strong><small>Fondazione Dalmine · Maggio 2025</small></div>
+                    <span class="chk">✓</span>
+                </div>
+                <div class="cert"><span>🇬🇧</span>
+                    <div><strong>Cambridge B2 First (FCE)</strong><small>Cambridge Assessment English</small></div><span
+                        class="chk">✓</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="section-header">
-            <div class="section-label">Esperienza</div>
-            <h2 class="section-title">Il Mio Percorso</h2>
-        </div>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+        <div class="label">Esperienza</div>
+        <h2>Percorso</h2>
 
         <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">Dicembre 2025</div>
-                    <h3 class="timeline-title">Certificazione Siemens PLC</h3>
-                    <p class="timeline-subtitle">Fondazione Dalmine</p>
-                    <div class="timeline-desc">
-                        Completato corso di automazione base con PLC Siemens, acquisendo competenze
-                        in programmazione industriale e controllo processi.
-                    </div>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <span class="tl-date">Dicembre 2025</span>
+                    <h3>Certificazione Siemens PLC</h3>
+                    <p class="tl-where">Fondazione Dalmine</p>
+                    <p>Programmazione PLC con TIA Portal, controllo processi automatizzati.</p>
                 </div>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">Giugno 2025</div>
-                    <h3 class="timeline-title">PCTO - ABB</h3>
-                    <p class="timeline-subtitle">Ufficio Ingegneria & Standardizzazione</p>
-                    <div class="timeline-desc">
-                        <ul>
-                            <li>Collaborazione in progetto di standardizzazione prodotti con Excel</li>
-                            <li>Sviluppo autonomo di script Python per automatizzare operazioni ripetitive</li>
-                            <li>Riduzione significativa dei tempi di lavoro attraverso l'automazione</li>
-                        </ul>
-                    </div>
+            <div class="tl-item">
+                <div class="tl-dot hi"></div>
+                <div class="tl-card hi">
+                    <span class="tl-date">Giugno 2025</span>
+                    <h3>PCTO — ABB Dalmine</h3>
+                    <p class="tl-where">Ufficio Ingegneria & Standardizzazione</p>
+                    <ul>
+                        <li>Standardizzazione prodotti con Excel avanzato</li>
+                        <li>Script Python per automatizzare processi ripetitivi</li>
+                        <li>Sviluppo Calibration Manager PHP/MySQL</li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">Giugno 2025</div>
-                    <h3 class="timeline-title">Certificazione ABB</h3>
-                    <p class="timeline-subtitle">Fondazione Dalmine - Automazione Industriale</p>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <span class="tl-date">Maggio 2025</span>
+                    <h3>Certificazione Festo FACT</h3>
+                    <p class="tl-where">Fondazione Dalmine — Pneumatica</p>
                 </div>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">Maggio 2025</div>
-                    <h3 class="timeline-title">Certificazione Festo FACT</h3>
-                    <p class="timeline-subtitle">Fondazione Dalmine - Pneumatica</p>
+            <div class="tl-item">
+                <div class="tl-dot hi"></div>
+                <div class="tl-card hi">
+                    <span class="tl-date">Marzo 2025</span>
+                    <h3>PCTO Internazionale 🇪🇸</h3>
+                    <p class="tl-where">Startup Tecnologica — Barcellona, Spagna</p>
+                    <ul>
+                        <li>Team di sviluppo internazionale in presenza</li>
+                        <li>Sviluppo app Flutter</li>
+                        <li>Ambiente multiculturale, lingua inglese</li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">Marzo 2025</div>
-                    <h3 class="timeline-title">PCTO Internazionale</h3>
-                    <p class="timeline-subtitle">Startup Tecnologica - Barcellona, Spagna 🇪🇸</p>
-                    <div class="timeline-desc">
-                        <ul>
-                            <li>Collaborazione in presenza con team di sviluppo internazionale</li>
-                            <li>Partecipazione allo sviluppo di applicazione in Flutter</li>
-                            <li>Sviluppo di autonomia e capacità di adattamento in contesto internazionale</li>
-                            <li>Miglioramento competenze linguistiche (Inglese/Spagnolo)</li>
-                        </ul>
-                    </div>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <span class="tl-date">2025</span>
+                    <h3>🏆 Borsa di Studio per Merito</h3>
+                    <p class="tl-where">ITIS Guglielmo Marconi</p>
                 </div>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">2025</div>
-                    <h3 class="timeline-title">Borsa di Studio per Merito</h3>
-                    <p class="timeline-subtitle">ITIS Guglielmo Marconi</p>
-                    <div class="timeline-desc">
-                        Ricevuta borsa di studio per eccellenza nel rendimento scolastico.
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">Settembre 2021 - Oggi</div>
-                    <h3 class="timeline-title">ITIS Guglielmo Marconi</h3>
-                    <p class="timeline-subtitle">Indirizzo: Informatica e Telecomunicazioni</p>
-                    <div class="timeline-desc">
-                        Attualmente al quinto anno, con focus su programmazione, database,
-                        reti e sviluppo software.
-                    </div>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <span class="tl-date">Sett. 2021 — oggi</span>
+                    <h3>ITIS Guglielmo Marconi</h3>
+                    <p class="tl-where">Informatica e Telecomunicazioni — Dalmine (BG)</p>
+                    <p>Programmazione, database, reti, sistemi. Quinto anno in corso.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <div class="cta-section" id="contatti">
-        <div class="cta-content">
-            <h2 class="cta-title">Lavoriamo Insieme</h2>
-            <p class="cta-subtitle">
-                Sono alla ricerca di opportunità di stage o lavoro part-time per crescere
-                professionalmente mentre studio all'università. Hai un progetto in mente?
-            </p>
-            <div class="cta-buttons">
-                <a href="mailto:thomas.manzoni@example.com" class="btn btn-primary">
-                    📧 Invia Email
-                </a>
-                <a href="https://linkedin.com/in/thomasmanzoni" class="btn btn-secondary">
-                    💼 LinkedIn
-                </a>
-                <a href="https://github.com/thomasmanzoni" class="btn btn-secondary">
-                    🐙 GitHub
-                </a>
-                <a href="#" class="btn btn-secondary">
-                    📄 Scarica CV
-                </a>
-            </div>
-        </div>
-    </div>
-
+    <!-- FOOTER -->
     <footer>
-        <p>© 2025 Thomas Manzoni - Made with 💜 and code</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">ITIS G. Marconi • Dalmine (BG) • Informatica e
-            Telecomunicazioni</p>
+        <div class="footer-links">
+            <a href="mailto:thomasmanzoni9807@gmail.com">📧 thomasmanzoni9807@gmail.com</a>
+            <a href="https://github.com/th0mmyy" target="_blank" rel="noopener">🐙 th0mmyy</a>
+            <a href="https://github.com/manzonithomas" target="_blank" rel="noopener">🐙 manzonithomas</a>
+            <a href="uploads/CV.pdf" target="_blank" rel="noopener">📄 CV PDF</a>
+        </div>
+        <p>© 2026 Thomas Manzoni</p>
     </footer>
+
+    <button id="btt" aria-label="Torna su">↑</button>
 
     <script src="js/main.js"></script>
 </body>
