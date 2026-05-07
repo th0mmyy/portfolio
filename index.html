@@ -16,6 +16,9 @@
 
 <body>
 
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress"></div>
+
     <!-- Theme toggle -->
     <button id="theme-toggle" aria-label="Cambia tema">
         <span class="icon-dark">🌙</span>
@@ -29,7 +32,8 @@
         <div class="hero-inner">
             <span class="badge">🎓 ITIS G. Marconi · Quinta · Informatica</span>
             <h1>Thomas<br>Manzoni</h1>
-            <p class="sub">Software, siti web e architetture di rete.<br>Studente di informatica presso l'ITIS Marconi.</p>
+            <p class="sub">Software, siti web e architetture di rete.<br>Studente di informatica presso l'ITIS Marconi.
+            </p>
             <div class="cta-row">
                 <a href="#progetti" class="btn primary">Progetti ↓</a>
                 <a href="uploads/CV.pdf" target="_blank" rel="noopener" class="btn ghost">CV PDF</a>
@@ -80,7 +84,6 @@
                         </svg>
                     </a>
                 </div>
-                <!-- GitHub labels -->
                 <div class="gh-labels">
                     <span><a href="https://github.com/th0mmyy" target="_blank" rel="noopener">th0mmyy</a> —
                         personale</span>
@@ -125,17 +128,29 @@
         <p class="section-sub">Tre selezionati. Gli altri sono su GitHub.</p>
 
         <div class="projects">
-            <div class="project">
+            <!-- ★ Featured: layout orizzontale da tablet in su -->
+            <div class="project featured">
                 <div class="proj-cover" style="--c1:#1a2e1a;--c2:#0f3320" data-cover="img/cover-menu.jpg">
                     <span class="proj-emoji">🍽️</span>
+                    <div class="proj-play" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="6,3 20,12 6,21" />
+                        </svg>
+                    </div>
+                    <!-- Quando avrai il video: data-video="video/menu-demo.mp4" -->
                 </div>
                 <div class="proj-body">
-                    <div class="chips"><span>PHP</span><span>MySQL</span><span>Full-Stack</span></div>
+                    <div class="proj-meta">
+                        <span class="proj-type">Web App</span>
+                        <div class="chips"><span>PHP</span><span>MySQL</span><span>Full-Stack</span></div>
+                    </div>
                     <h3>Menu Digitale</h3>
                     <p>Sistema di gestione menu per ristorante con pannello admin, CRUD su categorie e piatti, e
                         interfaccia pubblica ottimizzata per mobile.</p>
-                    <p>Cosa ho imparato: Generazione QR code PHP, gestione database MySQL, sviluppo interfacce utente
-                        responsive.</p>
+                    <div class="proj-learn">
+                        <span class="proj-learn-label">Cosa ho imparato</span>
+                        Generazione QR code PHP, gestione database MySQL, sviluppo interfacce responsive.
+                    </div>
                     <div class="proj-links">
                         <a href="https://menudigitale.page.gd/" target="_blank" rel="noopener"
                             class="proj-link primary">Demo live ↗</a>
@@ -143,18 +158,27 @@
                 </div>
             </div>
 
-            <!-- COVER FOTO: img/cover-f1.jpg -->
             <div class="project">
                 <div class="proj-cover" style="--c1:#1a0000;--c2:#3d0000" data-cover="img/cover-f1.jpg">
                     <span class="proj-emoji">🏎️</span>
+                    <div class="proj-play" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="6,3 20,12 6,21" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="proj-body">
-                    <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>API</span></div>
+                    <div class="proj-meta">
+                        <span class="proj-type">Dashboard</span>
+                        <div class="chips"><span>HTML</span><span>CSS</span><span>JS</span><span>API</span></div>
+                    </div>
                     <h3>F1 — OpenF1</h3>
                     <p>Dashboard dati Formula 1 in tempo reale tramite API OpenF1. Tempi sul giro, telemetria e
-                        classifiche aggiornate live durante le sessioni.</p>
-                    <p>Cosa ho imparato: Integrazione API REST, gestione dati in tempo reale, sviluppo interfacce utente
-                        responsive.</p>
+                        classifiche aggiornate live.</p>
+                    <div class="proj-learn">
+                        <span class="proj-learn-label">Cosa ho imparato</span>
+                        Integrazione API REST, gestione dati real-time, interfacce responsive.
+                    </div>
                     <div class="proj-links">
                         <a href="https://apif1tps.vercel.app/" target="_blank" rel="noopener"
                             class="proj-link primary">Demo live ↗</a>
@@ -162,30 +186,37 @@
                 </div>
             </div>
 
-            <!-- COVER FOTO: img/cover-quiz.jpg -->
             <div class="project">
                 <div class="proj-cover" style="--c1:#0d1f3c;--c2:#1a3a6e" data-cover="img/cover-quiz.jpg">
                     <span class="proj-emoji">📱</span>
+                    <div class="proj-play" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="6,3 20,12 6,21" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="proj-body">
-                    <div class="chips"><span>.NET MAUI</span><span>Mobile</span><span>API</span></div>
+                    <div class="proj-meta">
+                        <span class="proj-type">Mobile App</span>
+                        <div class="chips"><span>.NET MAUI</span><span>API</span></div>
+                    </div>
                     <h3>App Quiz Patente</h3>
-                    <p>App mobile cross-platform per la preparazione all'esame di teoria. Domande da API REST,
-                        salvataggio progresso locale e statistiche per sessione.</p>
-                    <p>Cosa ho imparato: Sviluppo applicazioni mobile cross-platform, integrazione con API REST,
-                        gestione dati locali.</p>
+                    <p>App cross-platform per la preparazione all'esame di teoria. Domande da API REST,
+                        salvataggio progresso e statistiche.</p>
+                    <div class="proj-learn">
+                        <span class="proj-learn-label">Cosa ho imparato</span>
+                        Sviluppo mobile cross-platform, integrazione API REST, gestione dati locali.
+                    </div>
                     <div class="proj-links">
                         <a href="https://github.com/manzonithomas/Manzoni_Sesana-ProgettoQuizPatente" target="_blank"
                             rel="noopener" class="proj-link">GitHub →</a>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="more-row">
             <p>Altri: Bookshelf App, Calibration Manager (ABB), Othello (C#)…</p>
-            <p>Pagina "Progetti" presto in arrivo...</p>
             <div class="more-btns">
                 <a href="https://github.com/th0mmyy" target="_blank" rel="noopener" class="btn ghost">th0mmyy →</a>
                 <a href="https://github.com/manzonithomas" target="_blank" rel="noopener"
@@ -193,6 +224,15 @@
             </div>
         </div>
     </section>
+
+    <!-- Video modal (pronto per quando avrai i video) -->
+    <div id="video-modal" class="video-modal" aria-hidden="true">
+        <div class="video-modal-backdrop"></div>
+        <div class="video-modal-inner">
+            <button id="video-modal-close" class="video-modal-close" aria-label="Chiudi video">✕</button>
+            <video id="video-modal-src" controls playsinline></video>
+        </div>
+    </div>
 
     <!-- SKILLS -->
     <section id="skills" class="section">
@@ -243,21 +283,25 @@
         <div class="certs">
             <h3>🏅 Certificazioni</h3>
             <div class="cert-list">
-                <div class="cert"><span>🤖</span>
+                <div class="cert">
+                    <span>🤖</span>
                     <div><strong>ABB Automazione Industriale</strong><small>Fondazione Dalmine · Giugno 2025</small>
                     </div><span class="chk">✓</span>
                 </div>
-                <div class="cert"><span>⚙️</span>
+                <div class="cert">
+                    <span>⚙️</span>
                     <div><strong>Siemens PLC — TIA Portal</strong><small>Fondazione Dalmine · Dicembre 2025</small>
                     </div><span class="chk">✓</span>
                 </div>
-                <div class="cert"><span>💨</span>
+                <div class="cert">
+                    <span>💨</span>
                     <div><strong>Festo FACT — Pneumatica</strong><small>Fondazione Dalmine · Maggio 2025</small></div>
                     <span class="chk">✓</span>
                 </div>
-                <div class="cert"><span>🇬🇧</span>
-                    <div><strong>Cambridge B2 First (FCE)</strong><small>Cambridge Assessment English</small></div><span
-                        class="chk">✓</span>
+                <div class="cert">
+                    <span>🇬🇧</span>
+                    <div><strong>Cambridge B2 First (FCE)</strong><small>Cambridge Assessment English</small></div>
+                    <span class="chk">✓</span>
                 </div>
             </div>
         </div>

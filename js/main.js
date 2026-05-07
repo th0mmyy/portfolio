@@ -126,3 +126,35 @@ if (!isTouch && !reduced) {
         });
     }, { passive: true });
 }
+
+/* ── Video modal── */
+const videoModal = document.getElementById('video-modal');
+const videoSrc = document.getElementById('video-modal-src');
+const videoClose = document.getElementById('video-modal-close');
+
+document.querySelectorAll('.proj-cover[data-video]').forEach(el => {
+    el.addEventListener('click', () => {
+        const src = el.getAttribute('data-video');
+        if (!src) return;
+        videoSrc.src = src;
+        videoModal.classList.add('open');
+        videoModal.setAttribute('aria-hidden', 'false');
+        videoSrc.play().catch(() => { });
+    });
+});
+
+function closeVideoModal() {
+    videoModal.classList.remove('open');
+    videoModal.setAttribute('aria-hidden', 'true');
+    videoSrc.pause();
+    videoSrc.removeAttribute('src');
+    videoSrc.load();
+}
+
+if (videoClose) videoClose.addEventListener('click', closeVideoModal);
+if (videoModal) {
+    videoModal.querySelector('.video-modal-backdrop').addEventListener('click', closeVideoModal);
+}
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && videoModal && videoModal.classList.contains('open')) closeVideoModal();
+});
